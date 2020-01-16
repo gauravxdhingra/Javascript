@@ -1,4 +1,3 @@
-// Dec2Bin
 var n = 13;
 var ans = 0;
 var multiplier = 1;
