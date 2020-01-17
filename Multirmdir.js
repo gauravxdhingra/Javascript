@@ -15,14 +15,14 @@ for (var i = 1; i <= 50; i++) {
   }
 
   // duplicate folders
-  if (fs.existsSync(folderName + i) == true) {
-    console.log(folderName + i + " Already exists");
-    return;
+  if (fs.existsSync(folderName + i) == false) {
+    console.log(folderName + i + " Deosn't exist");
+    continue;
   }
 
   // mkdir
   fs.rmdirSync(folderName + i);
 
   // print
-  console.log("Folder " + folderName + i + " has been created");
+  console.log("Folder " + folderName + i + " has been removed");
 }
