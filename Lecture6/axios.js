@@ -8,13 +8,16 @@ async function helper() {
         const response = await axios.get(
             "https://www.metaweather.com/api/location/search/?query=" + cityName
         );
+        var woeid = response.data[0].woeid;
+
     } catch (err) {
         console.log("False Value")
-        console.log(err)
+        return
+        // console.log(err)
     };
     // you will be inside data key
     // console.log(response.data[0].woeid);
-    var woeid = response.data[0].woeid;
+
 
     const AnotherResponse = await axios.get(
         "https://www.metaweather.com/api/location/" + woeid + "/"
@@ -31,4 +34,5 @@ async function helper() {
         "\n" + "Max Temp: " + AnotherResponse.data.consolidated_weather[i].max_temp.toFixed(2) + "\n"
         + "Humidity: " + AnotherResponse.data.consolidated_weather[i].humidity);
 }
+
 helper();
