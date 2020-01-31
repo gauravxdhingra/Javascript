@@ -1,6 +1,14 @@
 const getRawWeather = require("../utilities/getRawWeather");
-module.exports = async function(location) {
+const location = require("../utilities/getLocation");
+
+module.exports = async function (location) {
+
+  if (location == undefined) {
+    location = await getLocation();
+  }
+
   const fullWeather = await getRawWeather(location);
+  
   // 5 days weather
   const TodaysWeather = fullWeather[0];
   const currentState = TodaysWeather["weather_state_name"];
