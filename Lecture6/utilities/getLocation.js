@@ -6,7 +6,7 @@ module.exports = async function () {
     );
     // var cityName = response.data[0].city;
     const location = response.data[0].city;
-    console.log(cityName);
+    console.log(location);
 
-    // return location;
+    return location;
 }

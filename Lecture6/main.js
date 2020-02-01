@@ -18,8 +18,8 @@ if (cmd == "today") {
     forecast(location);
 } else if ((cmd == "help")) {
     help();
-
 } else if (cmd == "version") {
+    version();
 } else {
     console.log("Wrong Command");
 }
